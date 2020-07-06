@@ -5,6 +5,12 @@ mat-list-item.user-message {
   margin: 0.5rem 0;
   padding: 0.25rem 0;
 
+  .mat-line {
+    word-break: break-word;
+    max-width: 90%;
+    white-space: pre-wrap;
+  }
+
   &:hover {
     background-color: $hover-color;
   }
