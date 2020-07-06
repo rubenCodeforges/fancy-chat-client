@@ -1,4 +1,4 @@
 export const ChatConfig = {
-    host: process.env.HOST || 'http://localhost:3000'
+    host: 'https://fancy-chat.herokuapp.com/' || 'http://localhost:3000'
 };
 

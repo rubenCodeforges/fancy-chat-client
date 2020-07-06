@@ -1,7 +1,7 @@
 <mat-list>
   <div mat-subheader>Users</div>
   <mat-list-item *ngFor="let user of usersStream | async">
-    <img matListAvatar [src]="'https://api.adorable.io/avatars/50/' + user.clientId" alt="...">
+    <img matListAvatar [src]="'https://api.adorable.io/avatars/50/' + user.userName" alt="...">
     <div mat-line><strong>{{user.userName}}</strong></div>
   </mat-list-item>
 </mat-list>
