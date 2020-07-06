@@ -1,0 +1,4 @@
+<mat-list class="chat-list" #messages>
+  <app-chat-message *ngFor="let message of messageStream | async"
+                    [userMessage]="message" (reply)="reply.emit($event)"></app-chat-message>
+</mat-list>

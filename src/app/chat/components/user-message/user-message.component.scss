@@ -1,0 +1,22 @@
+@import "src/app/chat/scss/colors";
+
+mat-list-item.user-message {
+  height: auto;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  .mat-line {
+    ::ng-deep {
+      .mention {
+        background: rgba(29, 155, 209, .1);
+        color: rgba(18, 100, 163, 1);
+        padding: 0 2px 1px 2px;
+        border-radius: 3px;
+      }
+    }
+  }
+}

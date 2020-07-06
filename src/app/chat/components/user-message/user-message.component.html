@@ -1,0 +1,10 @@
+<mat-list-item class="user-message">
+  <img matListAvatar [src]="'https://api.adorable.io/avatars/50/' + userMessage.name" alt="...">
+  <div mat-line>
+    <strong (dblclick)="reply.emit({userName: userMessage.name, clientId: userMessage.clientId})">
+      {{userMessage.name}}
+    </strong>
+    <small class="send-date">{{userMessage.sendAt | amCalendar}}</small>
+  </div>
+  <div mat-line class="mt-1" [innerHTML]="userMessage.text | mention"></div>
+</mat-list-item>

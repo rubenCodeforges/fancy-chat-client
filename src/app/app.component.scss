@@ -1,0 +1,15 @@
+$small-text-color: grey;
+$hover-color: #f8f8f8;
+
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .message-form {
+    width: 98%;
+  }
+}

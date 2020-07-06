@@ -1,0 +1,71 @@
+<div class="main" *ngIf="isConnected; else noConnection">
+  <div class="chat" *ngIf="isRegistered; else welcomeScreen">
+    <div class="chat-container">
+      <mat-toolbar>
+        <h3>Fancy Chat</h3>
+        <div>
+          <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>people_alt</mat-icon>
+          </button>
+          <small>{{(usersStream| async)?.length || 0}}</small>
+        </div>
+
+      </mat-toolbar>
+
+      <mat-sidenav-container hasBackdrop="false">
+        <mat-sidenav #snav mode="over" position="end" fixedTopGap="56">
+          <app-chat-users [usersStream]="usersStream"></app-chat-users>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <app-chat-room [messageStream]="messageStream" (reply)="onReply($event)"></app-chat-room>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+      <div class="controls">
+        <mat-form-field appearance="standard" class="message-form">
+          <input #messageInput matInput formControlName="message" placeholder="Write a message...">
+          <button mat-icon-button matSuffix type="submit">
+            <mat-icon>send</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>
+<ng-template #welcomeScreen>
+  <div class="chat-greeting">
+    <div class="face fancy"></div>
+    <mat-card>
+      <mat-card-content>
+        <form>
+          <h2>Welcome to fancy chat!</h2>
+          <mat-form-field class="full-width-input">
+            <input matInput #user placeholder="What is your name?" required>
+            <mat-error>
+              Looks like the name was taken :(
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="enterChat(user.value)">Enter</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ng-template>
+
+<ng-template #noConnection>
+  <div class="chat-greeting">
+    <mat-card>
+      <img src="https://api.adorable.io/avatars/352/wtf" alt="" mat-card-image>
+      <mat-card-content>
+          <h2>The server went down, or sleeps.</h2>
+          <p>Would you be so kind and wait while we are cranking it up ?</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</ng-template>

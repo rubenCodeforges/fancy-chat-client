@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/// Util classes if bootstrap utils would be used
+$spacer: 1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+
+$spacers: ();
+
+@for $i from 0 through 3 {
+  $spacers: map-merge($spacers, (
+    $i: (
+      x: $spacer-x * $i,
+      y: $spacer-y * $i
+    )
+  ))
+}
+@each $size, $lengths in $spacers {
+  $length-x:   map-get($lengths, x);
+  $length-y:   map-get($lengths, y);
+
+  .mt-#{$size} { margin-top:    $length-y * 0.25 !important; }
+  .mr-#{$size} { margin-right:  $length-x * 0.25 !important; }
+  .ml-#{$size} { margin-bottom: $length-y * 0.25 !important; }
+  .mb-#{$size} { margin-left:   $length-x * 0.25 !important; }
+}

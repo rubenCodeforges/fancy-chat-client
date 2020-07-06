@@ -1,0 +1,14 @@
+@import 'src/app/chat/scss/colors';
+
+.send-date {
+  color: $small-text-color;
+  margin-left: 0.5em;
+}
+
+.chat-list {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 0 0 3.5rem 0;
+  overflow-x: auto;
+}
