@@ -1,27 +1,23 @@
-# ChatClient
+# Fancy chat client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+There are 2 options for installation
 
-## Code scaffolding
+- Install only the client side and use the hosted server.
+- Install both the server and the client locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Option 1
 
-## Build
+1. clone the repo
+2. in root folder run `npm i`
+3. Go to `ChatConfig.ts` and replace `process.env.HOST` with the server url `https://fancy-chat.herokuapp.com/`, heroku might go to sleep, so give it 10-30seconds to wind up.
+4. run `ng serve` or `npm start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Option 2
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. clone both repositories [server](https://github.com/rubenCodeforges/fancy-chat-server) and client
+2. run `npm i` inside both apps (server and client)
+3. run `npm start` in both apps 
