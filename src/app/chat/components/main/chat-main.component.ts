@@ -23,7 +23,7 @@ export class ChatMainComponent implements OnInit, OnDestroy {
     public isConnected = false;
 
     private subscriptionBag: Subscription[] = [];
-    private readonly USER_STORAGE_KEY: string;
+    private readonly USER_STORAGE_KEY = 'fancy-chat-user';
 
     constructor(private fb: FormBuilder,
                 private cdRef: ChangeDetectorRef,
