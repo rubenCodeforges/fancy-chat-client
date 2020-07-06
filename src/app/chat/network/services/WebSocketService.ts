@@ -4,14 +4,12 @@ import {MessagePayload} from '../dtos/MessagePayload';
 import {UserMessage} from '../dtos/UserMessage';
 import {Observable} from 'rxjs';
 import {ConnectedUser} from '../dtos/ConnectedUser';
-import {map} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
 })
 export class WebSocketService {
     constructor(private socket: Socket) {
-        this.socket.on('connect', () => console.log('asdasdasdasdasd'));
     }
 
     sendMessage(payload: MessagePayload): void {

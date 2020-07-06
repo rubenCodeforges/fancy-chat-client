@@ -14,7 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SocketIoModule} from 'ngx-socket-io';
-import {ConfigFactory} from './network/config/ConfigFactory';
+import {ChatConfig} from './network/config/ChatConfig';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -39,7 +39,7 @@ const modules = [
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    SocketIoModule.forRoot({url: ConfigFactory.get().host}),
+    SocketIoModule.forRoot({url: ChatConfig.host}),
 
 ];
 

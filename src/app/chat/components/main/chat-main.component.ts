@@ -68,6 +68,7 @@ export class ChatMainComponent implements OnInit, OnDestroy {
             .subscribe((res) => {
                 if (res.status === 'ok') {
                     this.isRegistered = !!res;
+                    this.currentUser = userName;
                     localStorage.setItem(this.USER_STORAGE_KEY, userName);
                 }
 
